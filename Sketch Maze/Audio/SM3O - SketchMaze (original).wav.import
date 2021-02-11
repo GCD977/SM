@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SM3O - SketchMaze (original).wav-15a6a04e0b18ccc1d4f00cae0cd789f4.sample"
+
+[deps]
+
+source_file="res://Audio/SM3O - SketchMaze (original).wav"
+dest_files=[ "res://.import/SM3O - SketchMaze (original).wav-15a6a04e0b18ccc1d4f00cae0cd789f4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

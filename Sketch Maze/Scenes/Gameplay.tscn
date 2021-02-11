@@ -1,0 +1,206 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sprites/Background.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Outlines/CENTER.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Outlines/topLeft.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Outlines/middleLeft.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/startingRoom.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Outlines/bottomCenter.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Outlines/topCenter.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Outlines/bottomLeft.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Outlines/topRight.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Outlines/bottomRight.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Outlines/middleRight.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/startingRoom.gd" type="Script" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 96, 96 )
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="startingRoom" type="Area2D" parent="."]
+position = Vector2( 160, 544 )
+z_index = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+sq = 13
+
+[node name="Sprite" type="Sprite" parent="startingRoom"]
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="startingRoom"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.67, 0.67 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Square rooms" type="Control" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sq1" type="TextureRect" parent="Square rooms"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 256.0
+margin_bottom = 256.0
+texture = ExtResource( 3 )
+
+[node name="sq2" type="TextureRect" parent="Square rooms"]
+margin_left = 256.0
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 256.0
+texture = ExtResource( 7 )
+
+[node name="sq3" type="TextureRect" parent="Square rooms"]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 640.0
+margin_bottom = 256.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sq4" type="TextureRect" parent="Square rooms"]
+margin_left = 640.0
+margin_top = 64.0
+margin_right = 832.0
+margin_bottom = 256.0
+texture = ExtResource( 7 )
+
+[node name="sq5" type="TextureRect" parent="Square rooms"]
+margin_left = 832.0
+margin_top = 64.0
+margin_right = 1024.0
+margin_bottom = 256.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sq6" type="TextureRect" parent="Square rooms"]
+margin_left = 1024.0
+margin_top = 64.0
+margin_right = 1216.0
+margin_bottom = 256.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sq7" type="TextureRect" parent="Square rooms"]
+margin_left = 64.0
+margin_top = 256.0
+margin_right = 256.0
+margin_bottom = 448.0
+texture = ExtResource( 4 )
+
+[node name="sq8" type="TextureRect" parent="Square rooms"]
+margin_left = 256.0
+margin_top = 256.0
+margin_right = 448.0
+margin_bottom = 448.0
+texture = ExtResource( 2 )
+
+[node name="sq9" type="TextureRect" parent="Square rooms"]
+margin_left = 448.0
+margin_top = 256.0
+margin_right = 640.0
+margin_bottom = 448.0
+texture = ExtResource( 2 )
+
+[node name="sq10" type="TextureRect" parent="Square rooms"]
+margin_left = 640.0
+margin_top = 256.0
+margin_right = 832.0
+margin_bottom = 448.0
+texture = ExtResource( 2 )
+
+[node name="sq11" type="TextureRect" parent="Square rooms"]
+margin_left = 832.0
+margin_top = 256.0
+margin_right = 1024.0
+margin_bottom = 448.0
+texture = ExtResource( 2 )
+
+[node name="sq12" type="TextureRect" parent="Square rooms"]
+margin_left = 1024.0
+margin_top = 256.0
+margin_right = 1216.0
+margin_bottom = 448.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sq13" type="TextureRect" parent="Square rooms"]
+margin_left = 64.0
+margin_top = 448.0
+margin_right = 256.0
+margin_bottom = 640.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sq14" type="TextureRect" parent="Square rooms"]
+margin_left = 256.0
+margin_top = 448.0
+margin_right = 448.0
+margin_bottom = 640.0
+texture = ExtResource( 6 )
+
+[node name="sq15" type="TextureRect" parent="Square rooms"]
+margin_left = 448.0
+margin_top = 448.0
+margin_right = 640.0
+margin_bottom = 640.0
+texture = ExtResource( 6 )
+
+[node name="sq16" type="TextureRect" parent="Square rooms"]
+margin_left = 640.0
+margin_top = 448.0
+margin_right = 832.0
+margin_bottom = 640.0
+texture = ExtResource( 6 )
+
+[node name="sq17" type="TextureRect" parent="Square rooms"]
+margin_left = 832.0
+margin_top = 448.0
+margin_right = 1024.0
+margin_bottom = 640.0
+texture = ExtResource( 6 )
+
+[node name="sq18" type="TextureRect" parent="Square rooms"]
+margin_left = 1024.0
+margin_top = 448.0
+margin_right = 1216.0
+margin_bottom = 640.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 10 )

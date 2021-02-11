@@ -1,0 +1,137 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Sprites/Player.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/mmTitle.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/mainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/storyHill_Hover/sprite_2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/storyHill_Idle.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/storyHill_Hover/sprite_4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/storyHill_Hover/sprite_0.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/storyHill_Hover/sprite_3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/storyHill_Hover/sprite_1.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 465, 0, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 116, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 465, 116, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 232, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 465, 232, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 348, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 465, 348, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 464, 465, 116 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 465, 464, 465, 116 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AnimatedTexture" id=12]
+flags = 4
+frames = 5
+fps = 5.0
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 9 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 4 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 8 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 6 )
+frame_4/delay_sec = 0.0
+
+[sub_resource type="Animation" id=13]
+resource_name = "default"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureButton/storyAnimation:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4.1 ),
+"transitions": PoolRealArray( 0.25, 2, 0.25, 2, 0.25 ),
+"update": 0,
+"values": [ 0.0, 30.0, 0.0, -30.0, 0.0 ]
+}
+
+[node name="mainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.291745
+margin_top = 1.41422
+margin_right = 0.291748
+margin_bottom = 1.41418
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+gpFileLocation = "res://Scenes/Gameplay.tscn"
+
+[node name="Title" type="AnimatedSprite" parent="."]
+position = Vector2( 645, 113 )
+frames = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 526.0
+margin_top = 554.0
+margin_right = 708.0
+margin_bottom = 636.0
+texture_normal = ExtResource( 5 )
+texture_hover = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="storyAnimation" type="Sprite" parent="TextureButton"]
+position = Vector2( 92.8632, 16.265 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -96 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/default = SubResource( 13 )
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_TextureButton_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

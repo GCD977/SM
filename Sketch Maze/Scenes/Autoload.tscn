@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Autoload.gd" type="Script" id=1]
+[ext_resource path="res://Audio/SM3O - SketchMaze (original).wav" type="AudioStream" id=2]
+[ext_resource path="res://Sprites/Background.png" type="Texture" id=3]
+
+[node name="Autoload" type="Node"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.67, 0.67 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mmPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
